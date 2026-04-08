@@ -1,9 +1,3 @@
-/* RESET & FULL VIEWPORT */
-* {
-    box-sizing: border-box; /* gère le padding et border partout */
-    margin: 0;
-    padding: 0;
-}
 
 html, body {
     width: 100%;
