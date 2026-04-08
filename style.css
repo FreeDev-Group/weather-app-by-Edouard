@@ -35,3 +35,37 @@ body {
     color: white;
     cursor: pointer;
 }
+
+/* HERO */
+.hero {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.hero h1 {
+    font-size: 42px;
+}
+
+/* SEARCH */
+.search {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.search input {
+    width: 260px;
+    padding: 12px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+}
+
+.search button {
+    padding: 12px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    border-radius: 0 10px 10px 0;
+}
