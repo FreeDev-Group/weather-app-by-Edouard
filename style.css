@@ -5,21 +5,25 @@ html, body {
     font-family: 'Inter', sans-serif;
     background: #070c2a;
     color: white;
-    padding: 30px 60px; 
-    display: flex;
-    justify-content: center; 
-    align-items: flex-start; /
+    margin: 0;
+    padding: 0;
 }
 
-/* APP */
+/* APP - espace autour + centrage */
 .app {
-    width: 100%;
-    max-width: 980px; 
-    padding: 20px;   
-    background: inherit; 
-    border-radius: 10px; 
+    max-width: 980px;      
+    margin: 30px auto;       
+    padding: 30px 60px;     
+    background: inherit;
+    border-radius: 10px;     
 }
 
+/* MOBILE override pour padding */
+@media (max-width: 600px) {
+    .app {
+        padding: 20px 15px;  /* moins d’espace sur mobile */
+    }
+}
 
 /* HEADER */
 .header {
