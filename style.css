@@ -413,3 +413,128 @@ body {
 .option.active {
     background: #4c6ef5;
 }
+
+/* =========================
+   RESPONSIVE 
+========================= */
+
+/* TABLETTE */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .box {
+    margin-top: 20px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+  /* APP */
+  .app {
+    padding: 15px;
+  }
+
+  /* HEADER */
+  .header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .logo img {
+    width: 150px;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  /* SEARCH */
+  .search {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search input {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .search button {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  /* MAIN CARD */
+  .main-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .temp {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .temp img {
+    width: 80px;
+  }
+
+  .temp h1 {
+    font-size: 40px;
+  }
+
+  /* STATS */
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats h3 {
+    font-size: 22px;
+  }
+
+  /* DAILY */
+  .daily-list {
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  .day {
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+
+  /* HOURLY */
+  .hour {
+    padding: 10px;
+  }
+
+  .hour-left img {
+    width: 20px;
+  }
+
+  /* DROPDOWN */
+  .dropdown-menu {
+    width: 100%;
+    right: 0;
+  }
+
+  /* SUGGESTIONS */
+  .suggestions-list {
+    width: 100%;
+  }
+}
+
+.units-dropdown {
+  position: relative;
+  z-index: 1000;
+}
+
+.dropdown-menu {
+  z-index: 2000;
+}
