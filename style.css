@@ -4,12 +4,14 @@ body {
     background: #070c2a;
     color: white;
 }
+
 /* APP */
 .app {
     max-width: 1100px;
     margin: auto;
     padding: 30px;
 }
+
 /* HEADER */
 .header {
     display: flex;
@@ -76,9 +78,12 @@ body {
     grid-template-columns: 2fr 1fr;
     gap: 20px;
 }
-.left, .box {
-  min-width: 0;
+
+.left,
+.box {
+    min-width: 0;
 }
+
 .box {
     width: 100%;
 }
@@ -187,4 +192,224 @@ body {
 
 .day img {
     width: 50px;
+}
+
+/* HOURLY */
+
+.hourly-header {
+    display: flex;
+    justify-content: space-between;
+    /* titre à gauche, menu à droite */
+    align-items: center;
+    position: relative;
+    /* nécessaire pour le menu absolu */
+}
+
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-wrapper img {
+    width: 16px;
+    /* petite flèche ou checkmark */
+}
+
+.selected-day {
+    font-weight: 600;
+}
+
+/* Dropdown menu */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    /* juste sous le menu-wrapper */
+    right: 0;
+    background-color: rgba(100, 100, 100, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    z-index: 10;
+}
+
+.menu li {
+    padding: 8px 12px;
+    color: white;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.menu.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+/* BOX POUR HOURLY FORECAST */
+.box {
+    background-color: rgba(128, 128, 128, 0.2);
+    /* gris semi-transparent, tu peux ajuster */
+    padding: 10px;
+    /* espace intérieur autour du contenu */
+    border-radius: 16px;
+    /* coins arrondis pour effet carte */
+    margin-top: 10px;
+    /* espace avec ce qu’il y a au-dessus */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    /* espace entre header et heures */
+}
+
+.hourly {
+    padding: 20px;
+}
+
+/* HOURLY FORECAST BOXES */
+.hour {
+    display: flex;
+    justify-content: space-between;
+    /* heure à gauche, température à droite */
+    align-items: center;
+    padding: 12px 15px;
+    /* espace intérieur */
+    margin-bottom: 10px;
+    /* espace entre les boîtes */
+    background-color: rgba(255, 255, 255, 0.05);
+    /* fond semi-transparent */
+    border-radius: 12px;
+    /* coins arrondis */
+    transition: transform 0.2s, background 0.2s;
+}
+
+.hourly .hour:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.hourly .hour-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* rapproche icône et texte de l'heure */
+}
+
+.hourly .hour-left img {
+    width: 28px;
+    /* taille icône */
+    flex-shrink: 0;
+}
+
+.hourly .hour span:last-child {
+    font-weight: bold;
+    /* met la température en gras */
+}
+
+.hour-left {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    /* rapproche icône et heure */
+}
+
+.hour-left img {
+    width: 24px;
+}
+
+.hour:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.hourly-header {
+    position: relative;
+}
+
+
+.suggestions-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 260px;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 8px;
+    z-index: 100;
+}
+
+.suggestions-list li {
+    padding: 8px 12px;
+    cursor: pointer;
+    color: white;
+}
+
+.suggestions-list li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.units-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#unitsBtn {
+    background: #1c2147;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/* MENU */
+.dropdown-menu {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    width: 220px;
+    background: rgba(40, 45, 90, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 14px;
+    padding: 10px;
+    display: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu.active {
+    display: block;
+}
+
+.dropdown-title {
+    font-size: 12px;
+    color: #aaa;
+    margin: 8px 10px;
+}
+
+.option {
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.option:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.option.active {
+    background: #4c6ef5;
 }
