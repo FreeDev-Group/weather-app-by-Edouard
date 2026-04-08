@@ -131,3 +131,60 @@ body {
 .temp img {
     width: 150px;
 }
+
+/* STATS */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.stat {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.stat img {
+    width: 20px;
+    margin-bottom: 5px;
+}
+
+.stats h3 {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: left;
+}
+
+/* DAILY */
+.daily {
+    margin-top: 20px;
+}
+
+.daily-list {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 70px;
+    transition: 0.3s;
+}
+
+.day:hover {
+    transform: translateY(-3px);
+}
+
+.day img {
+    width: 50px;
+}
