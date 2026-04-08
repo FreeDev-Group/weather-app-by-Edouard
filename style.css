@@ -4,3 +4,34 @@ body {
     background: #070c2a;
     color: white;
 }
+/* APP */
+.app {
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px;
+}
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.unit {
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}

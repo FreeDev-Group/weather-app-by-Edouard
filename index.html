@@ -11,8 +11,35 @@
 </head>
 
 <body>
-    
-<script src="app.js"></script>
+    <div class="app">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="logo">
+                <img src="assets/images/logo.svg">
+            </div>
+
+            <div class="units-dropdown">
+                <button class="unit" id="unitsBtn">
+                    Units °C ⌄
+                </button>
+
+                <div class="dropdown-menu" id="unitsMenu">
+                    <p class="dropdown-title">Temperature</p>
+                    <div class="option active">Celsius (°C)</div>
+                    <div class="option">Fahrenheit (°F)</div>
+
+                    <p class="dropdown-title">Wind Speed</p>
+                    <div class="option active">km/h</div>
+                    <div class="option">mph</div>
+
+                    <p class="dropdown-title">Precipitation</p>
+                    <div class="option active">Millimeters (mm)</div>
+                </div>
+            </div>
+        </header>
+
+    </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
