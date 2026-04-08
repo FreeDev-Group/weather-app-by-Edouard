@@ -164,4 +164,75 @@ document.addEventListener("DOMContentLoaded", () => {
         menuList.classList.remove('show');
       });
     });
+  } 
+
+  // ============================
+  // SEARCH AUTOCOMPLETE (LOCAL)
+  // ============================
+  if (searchInput) {
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.trim().toLowerCase();
+      suggestions.innerHTML = "";
+      if (!query) return;
+
+      const filtered = worldCities
+        .filter(city => city.toLowerCase().includes(query))
+        .slice(0, 10);
+
+      filtered.forEach(city => {
+        const li = document.createElement("li");
+        li.textContent = city;
+        li.addEventListener("click", () => {
+            //Mise à jour immédiate du titre
+            cityEl.textContent = city;
+            
+          getWeather(city);        // met à jour météo
+          searchInput.value = "";  // vide input
+          suggestions.innerHTML = "";
+        });
+        suggestions.appendChild(li);
+      });
+    });
   }
+
+  // ============================
+  // SEARCH BUTTON
+  // ============================
+  if (searchBtn) {
+    searchBtn.addEventListener("click", () => {
+      const city = searchInput.value.trim();
+      if (city) getWeather(city);
+    });
+  }
+
+  // ============================
+  // INIT
+  // ============================
+  getWeather(); // fetch par défaut sur Berlin
+});
+
+const unitsBtn = document.getElementById("unitsBtn");
+const unitsMenu = document.getElementById("unitsMenu");
+
+unitsBtn.addEventListener("click", () => {
+  unitsMenu.classList.toggle("active");
+});
+
+// fermer si clique ailleurs
+document.addEventListener("click", (e) => {
+  if (!unitsBtn.contains(e.target) && !unitsMenu.contains(e.target)) {
+    unitsMenu.classList.remove("active");
+  }
+});
+
+// gérer sélection
+const options = unitsMenu.querySelectorAll(".option");
+
+options.forEach(option => {
+  option.addEventListener("click", () => {
+    options.forEach(o => o.classList.remove("active"));
+    option.classList.add("active");
+
+    unitsBtn.textContent = option.textContent + " ⌄";
+  });
+});
