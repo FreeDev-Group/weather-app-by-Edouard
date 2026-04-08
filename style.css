@@ -69,3 +69,65 @@ body {
     color: white;
     border-radius: 0 10px 10px 0;
 }
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+.left, .box {
+  min-width: 0;
+}
+.box {
+    width: 100%;
+}
+
+.left {
+    width: 100%;
+}
+
+/* MAIN CARD */
+.main-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    border-radius: 16px;
+    background: linear-gradient(90deg, #4f46e5, #6d28d9);
+    position: relative;
+    overflow: hidden;
+}
+
+/* glow */
+.main-card::after {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent);
+    top: -50px;
+    right: -50px;
+    animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+.temp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.temp h1 {
+    font-size: 70px;
+    font-size: italic;
+}
+
+.temp img {
+    width: 150px;
+}
