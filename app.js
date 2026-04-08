@@ -141,7 +141,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  
+  // ============================
+  // UNIT TOGGLE °C / °F
+  // ============================
+  if (unitToggle) {
+    unitToggle.addEventListener("click", () => {
+      isCelsius = !isCelsius;
+      const cityName = cityEl.textContent;
+      getWeather(cityName);
+    });
+  }
+
 
   // ============================
   // MENU DROPDOWN DAYS
